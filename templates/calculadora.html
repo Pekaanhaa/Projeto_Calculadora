@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Define que o documento é HTML5 -->
+
+<html lang="pt-BR">
+<!-- Define o idioma da página -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Permite usar caracteres especiais -->
+
+    <title>Calculadora Web</title>
+    <!-- Título da aba do navegador -->
+</head>
+
+<body>
+
+    <h1>Calculadora Web</h1>
+    <!-- Título principal -->
+
+    <form method="POST">
+        <!-- Formulário que envia dados para o Flask -->
+
+        <label>Valor 1:</label>
+        <!-- Texto do primeiro campo -->
+
+        <input type="text" name="valor1" required>
+        <!-- Campo para digitar o primeiro número -->
+
+        <br><br>
+
+        <label>Valor 2:</label>
+        <!-- Texto do segundo campo -->
+
+        <input type="text" name="valor2" required>
+        <!-- Campo para digitar o segundo número -->
+
+        <br><br>
+
+        <button type="submit"
+                name="operacao"
+                value="soma">
+            Adição
+        </button>
+        <!-- Botão de soma -->
+
+        <button type="submit"
+                name="operacao"
+                value="subtracao">
+            Subtração
+        </button>
+        <!-- Botão de subtração -->
+
+        <button type="submit"
+                name="operacao"
+                value="multiplicacao">
+            Multiplicação
+        </button>
+        <!-- Botão de multiplicação -->
+
+        <button type="submit"
+                name="operacao"
+                value="divisao">
+            Divisão
+        </button>
+        <!-- Botão de divisão -->
+
+    </form>
+
+    {% if resultado is not none %}
+    <!-- Verifica se existe resultado -->
+
+        <h2>Resultado: {{ resultado }}</h2>
+        <!-- Mostra o resultado enviado pelo Flask -->
+
+    {% endif %}
+
+</body>
+</html>
